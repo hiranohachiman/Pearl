@@ -1,0 +1,59 @@
+seed: 12
+monitor: kendall_c
+metric_mode: max
+early_stopping: True
+patience: 1
+min_delta: 0.0
+save_top_k: 10
+save_weights_only: False
+min_epochs: 1
+max_epochs: 5
+gradient_clip_val: 1.0
+gpus: 1
+precision: 32
+debug: cls
+batch_size: 16
+# accumulate_grad_batches: 4
+accumulate_grad_batches: 1
+loader_workers: 1
+optimizer: Adam
+learning_rate: 1.0e-05
+# learning_rate: 1.0e-06
+encoder_learning_rate: 1.0e-05
+layerwise_decay: 0.95
+nr_frozen_epochs: 100000
+# scheduler: constant
+scheduler: linear_warmup
+warmup_steps: 1000
+
+train_path: data/spica_train.csv
+val_path: data/spica_val.csv
+test_path: data/spica_test.csv
+train_img_dir_path: data/images
+val_img_dir_path: data/images
+test_img_dir_path: data/images
+train_features_path: features/clippp/train
+val_features_path: features/clippp/val
+train_blip_features_path: features/blip2/train
+val_blip_features_path: features/blip2/val
+test_features_path: features/clippp/test
+test_blip_features_path: features/blip2/test
+train_beit3_features_path: features/beit3/train
+val_beit3_features_path: features/beit3/val
+test_beit3_features_path: features/beit3/test
+train_stella_features_path: features/stella/train
+val_stella_features_path: features/stella/val
+test_stella_features_path: features/stella/test
+
+model: PearlEstimator
+loss: huber
+encoder_model: XLMR
+# pretrained_model: princeton-nlp/sup-simcse-roberta-large
+# pretrained_model: princeton-nlp/sup-simcse-roberta-base
+layer: mix
+scalar_mix_dropout: 0.1
+pool: cls
+dropout: 0.1
+activations: Tanh
+hidden_sizes: "1536, 768"
+final_activation: False

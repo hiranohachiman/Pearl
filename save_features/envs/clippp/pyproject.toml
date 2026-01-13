@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "spica-clippp-pipeline"
+version = "0.1.0"
+description = "SPICA dataset feature extraction using CLIP++ (PACScore)"
+authors = ["smilab <noreply@example.com>"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.10"
+torch = {version = "2.2.2+cu121", source = "pytorch-cu121"}
+torchvision = {version = "0.17.2+cu121", source = "pytorch-cu121"}
+open-clip-torch = "^2.24.0"
+omegaconf = "^2.3.0"
+ftfy = "^6.2.0"
+regex = "^2024.5.15"
+scipy = "^1.12.0"
+pandas = "^2.2.0"
+numpy = "^1.26.0"
+tqdm = "^4.66.0"
+pillow = "^10.3.0"
+pyyaml = "^6.0.1"
+setuptools = "^75.0.0"
+
+[[tool.poetry.source]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
+priority = "supplemental"
+
+[build-system]
+requires = ["poetry-core>=1.8.0"]
+build-backend = "poetry.core.masonry.api"
+

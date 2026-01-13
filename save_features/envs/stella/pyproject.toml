@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "spica-stella-pipeline"
+version = "0.1.0"
+description = "SPICA dataset feature extraction using STELLA encoder"
+authors = ["smilab <noreply@example.com>"]
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.10"
+torch = {version = "2.2.2+cu121", source = "pytorch-cu121"}
+transformers = "^4.44.0"
+scikit-learn = "^1.4.0"
+pandas = "^2.2.0"
+numpy = "^1.26.0"
+tqdm = "^4.66.0"
+
+[[tool.poetry.source]]
+name = "pytorch-cu121"
+url = "https://download.pytorch.org/whl/cu121"
+priority = "supplemental"
+
+[build-system]
+requires = ["poetry-core>=1.8.0"]
+build-backend = "poetry.core.masonry.api"
+
