@@ -16,6 +16,8 @@ pyenv local pearl # cuda=11.8
 
 Before training or evaluation, make sure the datasets are already placed under `data/` with the following structure:
 
+The dataset can be downloaded from: https://huggingface.co/datasets/hiranohachiman/Spica
+
 ```
 data/
 ├── images/
